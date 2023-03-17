@@ -1,0 +1,26 @@
+<div class="container jumbotron">
+    <form class="form-inline justify-content-center" action="/result" method="post">
+        <input type="number" class="form-control" placeholder="Nhập số a" name="number_a" value={{a}}>
+        <div class="form-group">
+            <select class="form-control" id="sel1" name="operator">
+                <option value="add" {{#if isAdd}} selected {{else}} {{/if}}>+</option>
+                <option value="sub" {{#if isSub}} selected {{else}} {{/if}}>-</option>
+                <option value="multi" {{#if isMulti}} selected {{else}} {{/if}}>x</option>
+                <option value="divide" {{#if isDivide}} selected {{else}} {{/if}}>:</option>
+            </select>
+        </div>
+        <input type="number" class="form-control" placeholder="Nhập số b" name="number_b" value={{b}}>
+        <button type="submit" class="btn btn-primary">Calculator</button>
+    </form>
+
+
+    <div class="row p-5">
+        {{#if result}}
+        <h3 class="text-center font-weight-bold text-success  col-12">{{result}}</h3>
+        {{else}}
+        <h3 class="text-center font-weight-bold text-danger  col-12">Hãy nhập phép tính của bạn</h3>
+        {{/if}}
+    </div>
+
+
+</div>
